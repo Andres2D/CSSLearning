@@ -63,17 +63,27 @@ aside{
     border: 1px solid red;
     float: left;
     min-height: 500px;
+    max-height: 60px;
     text-align: center;
+    overflow-y: scroll;
 }
 
 .content .box{
+    position: relative;
     width: 40%;
     height: 100px;
-    background-color: tomato;
-    border: 2px solid blue;
+    background-color: #ccc;
+    border: 1px solid gray;
     color: white;
     float: left;
     margin: 20px;
+    text-align: center;
+    line-height: 100px;
+    color: black;
+    text-transform: uppercase;
+    box-shadow: 5px 5px 10px grey;
+    border-radius: 50px 10px 4px 61px;
+    /*border-radius: 9999px;*/
 }
 
 .content h1{
@@ -81,6 +91,7 @@ aside{
     border-bottom: 1px solid #ccc;
     padding: 15px;
     color: #444;
+    text-shadow: 1px 1px 2px gray;
 }
 
 
@@ -94,5 +105,41 @@ footer{
     border-top: 1px solid #ccc;
 }
 
+.innerShadow{
+    box-shadow: 0px 0px 20px grey inset !important;
+}
 
+.freedom{
+    position: absolute;
+    top: 300px;
+    left: 50%;
+    border: 1px solid black;
+    background-color: tomato;
+    color: white;
+    width: 50px;
+    height: 50px;
+    font-size: 13px;
+}
 
+.freedom1{
+    z-index: 102;
+}
+
+.freedom2{
+    background-color: green;
+    top: 280px;
+    left: 52%;
+    z-index: 101;
+}
+
+.fixed{
+    position: fixed;
+    top: 50%;
+    left: 0px;
+    border: 1px solid black;
+    background-color: blue;
+    color: white;
+    width: 50px;
+    height: 50px;
+    font-size: 13px;
+}
