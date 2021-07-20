@@ -1,0 +1,39 @@
+body{
+    background-color: #ccc;
+    /*
+    background-image: url('./images/travel1.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color: white;
+    background-attachment: fixed;
+    background-position: right bottom;*/
+    color: black;
+    text-indent: 25px;
+    /*word-spacing: 10px;
+    letter-spacing: 5px;*/
+}
+
+#box{
+    border: 5px solid black;
+    padding: 10px;
+    background-color: rgb(44, 165, 212);
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    /*line-height: 50px;*/
+    text-transform: uppercase;
+    text-decoration: line-through;
+    vertical-align: top;
+}
+
+h2{
+    color: black;
+    background-color: red ;
+    border: 5px solid white;
+    background-image: url('./images/pattern1.jpg');
+    text-align: justify;
+}
+
+p{
+    text-align: justify;
+}
