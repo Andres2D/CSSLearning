@@ -1,0 +1,135 @@
+//Variables
+$normal-font: sans-serif, Helvetica, Arial;
+$backColor: #ccc;
+$letterColor: red;
+$secondColor: rgb(209, 66, 66);
+
+//using variables
+body{
+    //background-color: $backColor;
+}
+
+h1{
+    font-family: $normal-font;
+    color: $letterColor;
+}
+
+p{
+    color: $secondColor;
+}
+
+// insteads
+.box{
+    border: 1px solid black;
+    width: 500px;
+    margin: 0px auto;
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+
+    h1{
+        color: blue;
+    }
+
+    p{
+        color: green;
+    }
+
+    .info{
+        font-size: 10px;
+
+        .author{
+            font-size: 15px;
+            color: tomato;
+        }
+    }
+}
+
+// Mixings / Functions
+@mixin  createBorders($color, $size, $shadow) {
+    border: $size solid $color;
+    border-radius: $size;
+    box-shadow: 0px 0px $size $shadow;
+}
+
+.box{
+    @include createBorders(yellow, 10px, green);
+}
+
+.list{
+    @include createBorders(green, 5px, yellow);
+}
+
+
+// Inheritance
+%alertNormal{
+    border: 1px solid gray;
+    background-color: #eee;
+    color: gray;
+    padding: 10px;
+    width: 80%;
+    margin: 20px auto;
+}
+
+.alert{
+    @extend %alertNormal;
+}
+
+.alertDanger{
+    @extend %alertNormal;
+    color: black;
+    background-color: red;
+}
+
+.alertSuccess{
+    @extend %alertNormal;
+    color: black;
+    background-color: greenyellow;
+}
+
+// Operators
+.clearFix{
+    clear: both;
+}
+
+h1{
+    font-size: 20px + 5px - 1px;
+}
+
+$boxSize: 200px;
+$wrap: 900px;
+
+.boxes{
+    width: $wrap;
+    margin: 0px auto;
+}
+
+.box{
+    float: left;
+    width: $boxSize / $wrap * 100%;
+    margin: 10px;
+}
+
+// Condictions - is
+h1{
+    @if $backColor == #ccc{
+        color: black;
+    } @else if $backColor == black {
+        color: lightblue;
+    }  @else{
+        color: pink;
+    }
+}
+
+// For
+$counter: 1;
+@for $counter from 1 through 10{
+    .list ul li:nth-child(#{$counter}){
+        font-size: $counter * 2px;
+        color: orange;
+    }
+}
+
+// Each
+
+// While
