@@ -9,6 +9,7 @@ $logoShadow: 1px 1px 0px #ccc;
 $darkgray: #444;
 $lighGray: #ccc;
 $regularTransition: all 300ms;
+$lightWitheColor: #eee;
 
 *{
     text-decoration: none;
@@ -39,12 +40,17 @@ $regularTransition: all 300ms;
 }
 
 .logo{
-    flex-grow: 1;
+    //flex-grow: 1;
     //flex-basis: 65%;
     padding: 10px;
     margin-left: 20px;
     text-shadow: $logoShadow;
     text-transform: uppercase;
+
+    font-family: $logoFont;
+    font-style: italic;
+    font-weight: 900px;
+    font-size: 35px;
 
     h1{
         font-family: $logoFont;
@@ -123,5 +129,133 @@ $regularTransition: all 300ms;
     p{
         font-size: 16px;
         color: gray;
+    }
+}
+
+#aside{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    flex-basis: 15%;
+    margin-right: 30px;
+    padding: 15px;
+
+    h2{
+        display: block;
+        width: 100%;
+        font-size: 18px;
+        font-weight: 100;
+        color: $darkgray;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        border-bottom: $lightGrayBorder;
+        text-align: center;
+    }
+
+    ul{
+        list-style: none;
+
+        li{
+            padding-bottom: 20px;
+        }
+    }
+
+    a{
+        display: block;
+        text-align: center;
+        padding: 20px;
+        background-color: $lightWitheColor;
+        color: $lightGrayBorder;
+        text-transform: uppercase;
+        transition: $regularTransition;
+    }
+
+    a:hover{
+        background-color: $darkgray;
+        color: $lightWitheColor;
+    }
+}
+
+#footer{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    height: 120px;
+    align-items: center;
+    border-top: $regularBorder;
+
+    .logo{
+        opacity: 0.5;
+        flex-grow: none;
+        order: 2;
+        margin-right: 5px;
+    }
+
+    .info{
+        order: 1;
+        color: $darkgray;
+        margin-left: 15px;
+    }
+}
+
+@media (max-width: 785px) {
+    
+    #header{
+        text-align: center;
+    }
+
+    
+    #menu{
+        ul{
+            margin-top: 20px;
+            align-items: flex-start;
+            justify-content: space-evenly;
+        }
+    }
+}
+
+@media (max-width: 611px) {
+    #content{
+        flex-direction: column;
+    }
+
+    #aside{
+        margin: 0px;
+
+        ul{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+
+            li{
+                flex-grow: 1;
+                margin-left: 5px;
+                margin-right: 5px;
+            }
+        }
+    }
+
+    .project{
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 468px) {
+    #footer{
+        .logo{
+            flex-grow: 1;
+            flex-basis: 100%;
+            text-align: center;
+            order: 1;
+            margin: 0px;
+        }
+
+        .info{
+            flex-grow: 1;
+            text-align: center;
+            margin: 0px;
+        }
     }
 }
