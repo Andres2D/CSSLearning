@@ -1,0 +1,85 @@
+$layoutBorder: 3px solid tomato;
+$boxBorder: 4px solid #222;
+$generalFont: sans-serif;
+
+
+body{
+    text-align: center;
+    font-family: $generalFont;
+}
+
+.layout{
+    width: 80%;
+    min-height: 600px;
+    margin: 0px auto;
+
+    display: grid;
+    grid-gap: 10px; // margin between elements
+
+    /* Define number of columns 
+    ej: 25% 25% 25% 25%  
+        repeat(4, calc(25% - 10px))
+        repeat(2, calc(25% - 10px)) 15% 35%;
+        1fr 1fr 1fr 1fr;
+    */
+    grid-template-columns: repeat(3, 1fr);
+
+    /*//Define number of rows 
+    ej: 1fr 1fr 1fr;
+        50% 25% 25%;
+        1fr 2fr 1fr;
+    */
+    grid-template-rows: repeat(2, 1fr) 3fr 1fr 1fr;
+
+    border: $layoutBorder;
+    padding: 10px;
+    
+    .box{
+        font-size: 20px;
+        font-weight: bold;
+        color:white;
+        padding: 20px;
+        border: $boxBorder;
+        background-color: gray;
+    }
+
+    .red{
+        grid-column-start: 1;
+        grid-column-end: 4;
+        background-color: red;
+    }
+    
+    .green{
+        grid-row: 2/6;
+        background-color: green;
+    }
+    
+    .blue{
+        grid-column: 2/4;
+        background-color: blue;
+    }
+    
+    .teal{
+        grid-column: 2/3;
+        grid-row: 3/5;
+        background-color: teal;
+    }
+
+    .orange{
+        grid-row: 3/5;
+        background-color: tomato;
+    }
+    
+    .pink{
+        /*
+        grid-column-start: 1;
+        grid-column-end: 3;
+        */
+
+        //Número de columnas a ocupar
+        grid-column: 2/ 4;
+
+        background-color: pink;
+    }
+}
+
