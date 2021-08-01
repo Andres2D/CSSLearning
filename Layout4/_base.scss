@@ -1,0 +1,248 @@
+$generalFont: sans-serif;
+$logoFont: Helvetica;
+$middleWidth: 50%;
+$marignCentered: 0px auto;
+$lightGrayBorder: 1px solid rgba(225,225,226, 0.8);
+$regularBorder: 1px solid #ccc;
+$regularShadow: 0px 0px 10px #ccc;
+$logoShadow: 1px 1px 0px #ccc;
+$darkgray: #444;
+$lighGray: #ccc;
+$regularTransition: all 300ms;
+$lightWitheColor: #eee;
+
+*{
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+    font-family: $generalFont;
+}
+
+#container{
+    width: 80%;
+    height: auto;
+    margin: $marignCentered;
+    border: $lightGrayBorder;
+    box-shadow: $regularShadow;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    min-height: 600px;
+}
+
+#header{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    align-items: center;
+
+    width: 100%;
+    height: 120px;
+    border-bottom: $lightGrayBorder;
+}
+
+.logo{
+   
+    padding: 10px;
+    margin-left: 20px;
+    text-shadow: $logoShadow;
+    text-transform: uppercase;
+
+    font-family: $logoFont;
+    font-style: italic;
+    font-weight: 900px;
+    font-size: 35px;
+
+    h1{
+        font-family: $logoFont;
+        font-style: italic;
+        font-weight: 900px;
+        font-size: 35px;
+    }
+}
+
+#menu{
+    width: 100%;
+    height: 100%;
+    padding-right: 20px;
+    
+    ul{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 100%; 
+        list-style: none;
+    }
+
+    a{
+        text-transform: uppercase;
+        color: $darkgray;
+        padding: 15px;
+        transition: $regularTransition;
+    }
+
+    a:hover{
+        background-color: $lighGray;
+        color: white;
+    }
+}
+
+#content{
+    display: grid;
+    grid-template-columns: 20% 1fr;
+    align-items: start;
+    justify-items: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#projects{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 250px);
+    grid-gap: 20px;
+    align-items: start;
+}
+
+.project{
+    margin-top: 20px;
+    margin-right: 20px;
+    border: $regularBorder;
+
+    img{
+        width: 100%;
+    }
+}
+
+.project-info{
+    padding: 10px;
+
+    a{
+        font-size: 16px;
+        color: black;
+        transition: $regularTransition;
+    }
+
+    a:hover{
+        color: green;
+    }
+
+    p{
+        font-size: 16px;
+        color: gray;
+    }
+}
+
+#aside{
+    margin-right: 30px;
+    padding: 15px;
+
+    h2{
+        display: block;
+        width: 100%;
+        font-size: 18px;
+        font-weight: 100;
+        color: $darkgray;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        border-bottom: $lightGrayBorder;
+        text-align: center;
+    }
+
+    ul{
+        list-style: none;
+
+        li{
+            padding-bottom: 20px;
+        }
+    }
+
+    a{
+        display: block;
+        text-align: center;
+        padding: 20px;
+        background-color: $lightWitheColor;
+        color: $lightGrayBorder;
+        text-transform: uppercase;
+        transition: $regularTransition;
+    }
+
+    a:hover{
+        background-color: $darkgray;
+        color: $lightWitheColor;
+    }
+}
+
+#footer{
+    display: grid;
+    grid-template-columns: 80% 20%;
+    align-items: center;
+    justify-content: start;
+    height: 120px;
+    border-top: $regularBorder;
+
+    .logo{
+        opacity: 0.5;
+        margin-right: 5px;
+    }
+
+    .info{
+        color: $darkgray;
+        margin-left: 15px;
+    }
+}
+
+
+@media (max-width: 1087px) {
+    #header{
+        display: grid;
+        grid-template-columns: 100%;
+        align-items: center;
+        justify-content: center;
+        height: 140px;
+        padding-bottom: 20px;
+        
+        h1{
+            text-align: center;
+        }
+    }
+
+    #content{
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: start;
+        justify-items: space-between;
+    }
+    
+    #projects{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+        
+        .project{
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+    }
+
+    
+    #aside{
+        margin-right: 0px;
+        padding: 15px;
+        
+        ul{
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    #footer{
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        justify-content: start;
+        height: 120px;
+        border-top: $regularBorder;
+        text-align: center !important;
+    }
+}

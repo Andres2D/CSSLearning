@@ -1,12 +1,179 @@
 $layoutBorder: 3px solid tomato;
 $boxBorder: 4px solid #222;
 $generalFont: sans-serif;
+$websiteBorder: 1px solid #ccc;
+$websiteArticle: 1px solid #555;
 
 
 body{
     text-align: center;
     font-family: $generalFont;
 }
+
+/*----------------------------CSSGRID Layout2 areas-----------------------------------*/
+
+
+#website-areas{
+    display: grid;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    grid-template-columns: repeat(5, 1fr);
+    /*grid-template-rows: 20% 10% 60% 10%;*/
+    grid-template-rows: 150px 70px 1fr 70px;
+    grid-template-areas: 
+        "header header header header header"
+        "menu menu menu menu menu"
+        "sidebar content content content content"
+        "footer footer footer footer footer";
+
+    width: 75%;
+    height: 1000px;
+    margin: 0px auto;
+    border: $websiteBorder;
+
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+
+    #header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-area: header;
+    
+        background-color: blue;
+        color: white;
+        /*align-self: center;*/
+    
+    }
+    
+    #menu{
+        grid-area: menu;
+        background-color: lightblue;
+        color: black;
+        line-height: 70px;
+    
+        ul{
+            display: grid;
+            grid-template-columns: repeat(9, 1fr);
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+        }
+    }
+    
+    #content{
+        grid-area: content;
+        background-color: #eee;
+    
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 25px;
+        padding: 20px;
+    
+        article{
+            background-color: #ccc;    
+            border: $websiteArticle;
+        }
+    }
+    
+    #sidebar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-area: sidebar;
+        background-color: tomato;
+        color: white;
+    }
+    
+    #footer{
+        grid-area: footer;
+        background-color: black;
+        color: white;
+    }
+}
+
+
+/*----------------------------CSSGRID Layout1-----------------------------------*/
+
+#website{
+    display: grid;
+    //grid-gap: 10px;
+    grid-template-columns: repeat(5, 1fr);
+    /*grid-template-rows: 20% 10% 60% 10%;*/
+    grid-template-rows: 150px 70px 1fr 70px;
+
+    width: 75%;
+    height: 1000px;
+    margin: 0px auto;
+    border: $websiteBorder;
+
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+
+
+    #header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        background-color: blue;
+        color: white;
+        grid-column: 1 / 6;
+        /*align-self: center;*/
+    
+    }
+    
+    #menu{
+        background-color: lightblue;
+        color: black;
+        grid-column: 1 / 6;
+        line-height: 70px;
+    
+        ul{
+            display: grid;
+            grid-template-columns: repeat(9, 1fr);
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+        }
+    }
+    
+    #content{
+        background-color: #eee;
+        grid-column: 1 / 5;
+    
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 25px;
+        padding: 20px;
+    
+        article{
+            background-color: #ccc;    
+            border: $websiteArticle;
+        }
+    }
+    
+    #sidebar{
+        background-color: tomato;
+        color: white;
+        grid-column: 5 / 6;
+    }
+    
+    #footer{
+        background-color: black;
+        color: white;
+        grid-column: 1 / 6;
+    }
+    
+    
+}
+
+
+/*-------------------------------Examples--------------------------------*/
 
 .layout{
     width: 80%;

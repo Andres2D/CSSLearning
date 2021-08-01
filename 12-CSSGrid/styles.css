@@ -3,6 +3,133 @@ body {
   font-family: sans-serif;
 }
 
+/*----------------------------CSSGRID Layout2 areas-----------------------------------*/
+#website-areas {
+  display: grid;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  grid-template-columns: repeat(5, 1fr);
+  /*grid-template-rows: 20% 10% 60% 10%;*/
+  grid-template-rows: 150px 70px 1fr 70px;
+  grid-template-areas: "header header header header header" "menu menu menu menu menu" "sidebar content content content content" "footer footer footer footer footer";
+  width: 75%;
+  height: 1000px;
+  margin: 0px auto;
+  border: 1px solid #ccc;
+}
+#website-areas * {
+  margin: 0px;
+  padding: 0px;
+}
+#website-areas #header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: header;
+  background-color: blue;
+  color: white;
+  /*align-self: center;*/
+}
+#website-areas #menu {
+  grid-area: menu;
+  background-color: lightblue;
+  color: black;
+  line-height: 70px;
+}
+#website-areas #menu ul {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+#website-areas #content {
+  grid-area: content;
+  background-color: #eee;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 25px;
+  padding: 20px;
+}
+#website-areas #content article {
+  background-color: #ccc;
+  border: 1px solid #555;
+}
+#website-areas #sidebar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: sidebar;
+  background-color: tomato;
+  color: white;
+}
+#website-areas #footer {
+  grid-area: footer;
+  background-color: black;
+  color: white;
+}
+
+/*----------------------------CSSGRID Layout1-----------------------------------*/
+#website {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  /*grid-template-rows: 20% 10% 60% 10%;*/
+  grid-template-rows: 150px 70px 1fr 70px;
+  width: 75%;
+  height: 1000px;
+  margin: 0px auto;
+  border: 1px solid #ccc;
+}
+#website * {
+  margin: 0px;
+  padding: 0px;
+}
+#website #header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: blue;
+  color: white;
+  grid-column: 1/6;
+  /*align-self: center;*/
+}
+#website #menu {
+  background-color: lightblue;
+  color: black;
+  grid-column: 1/6;
+  line-height: 70px;
+}
+#website #menu ul {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+#website #content {
+  background-color: #eee;
+  grid-column: 1/5;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 25px;
+  padding: 20px;
+}
+#website #content article {
+  background-color: #ccc;
+  border: 1px solid #555;
+}
+#website #sidebar {
+  background-color: tomato;
+  color: white;
+  grid-column: 5/6;
+}
+#website #footer {
+  background-color: black;
+  color: white;
+  grid-column: 1/6;
+}
+
+/*-------------------------------Examples--------------------------------*/
 .layout {
   width: 80%;
   min-height: 600px;
